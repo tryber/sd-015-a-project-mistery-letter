@@ -7,7 +7,7 @@ function alert() {
 }
 
 function createLetter() {
-  if (input.value === '') {
+  if (input.value === '' || input.value === ' ') {
     alert();
   } else {
     pCarta.innerText = '';
