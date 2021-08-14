@@ -22,4 +22,3 @@ function createLetter() {
 }
 
 createButton.addEventListener('click', createLetter);
-
