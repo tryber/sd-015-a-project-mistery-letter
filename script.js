@@ -4,7 +4,7 @@ const createButton = document.getElementById('criar-carta');
 const styleGroup = ['newspaper', 'magazine1', 'magazine2'];
 const sizeGroup = ['medium', 'big', 'reallybig'];
 const rotationGroup = ['rotateleft', 'rotateright'];
-const skewGroup = ['skewleft', 'skewrught'];
+const skewGroup = ['skewleft', 'skewright'];
 
 function alert() {
   pCarta.innerText = 'Por favor, digite o conteúdo da carta.';
