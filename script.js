@@ -1,6 +1,7 @@
 const textoInput = document.getElementById('carta-texto');
 const pCarta = document.getElementById('carta-gerada');
 const criarBtn = document.getElementById('criar-carta');
+const pCont = document.getElementById('carta-contador');
 
 const styles = ['newspaper', 'magazine1', 'magazine2'];
 const sizes = ['medium', 'big', 'reallybig'];
@@ -25,6 +26,7 @@ function stylizeSpans() {
 
 criarBtn.addEventListener('click', () => {
   const letterWords = textoInput.value.split(' ');
+  pCont.innerText = letterWords.length;
   pCarta.innerHTML = '';
   if (checkInput()) {
     pCarta.innerText = 'Por favor, digite o conteúdo da carta.';
