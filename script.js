@@ -1,6 +1,19 @@
 const inputText = document.getElementById('carta-texto');
 const createBttn = document.getElementById('criar-carta');
 const finalLetter = document.getElementById('carta-gerada');
+const style = ['newspaper', 'magazine1', 'magazine2'];
+const size = ['medium', 'big', 'reallybig'];
+const rotate = ['rotateleft', 'rotateright'];
+const skew = ['skewleft', 'skewright'];
+
+function randomClassGenerator() {
+  const styleIndex = Math.floor(Math.random() * 3);
+  const sizeIndex = Math.floor(Math.random() * 3);
+  const rotateIndex = Math.floor(Math.random() * 2);
+  const skewIndex = Math.floor(Math.random() * 2);
+  const res = `${style[styleIndex]} ${size[sizeIndex]} ${rotate[rotateIndex]} ${skew[skewIndex]}`;
+  return res;
+}
 
 function readInput() {
   createBttn.addEventListener('click', () => {
@@ -14,6 +27,7 @@ function readInput() {
       }
       const newSpan = document.createElement('span');
       newSpan.innerHTML = words[index];
+      newSpan.className = randomClassGenerator();
       finalLetter.appendChild(newSpan);
     }
     if (emptyCount === words.length) {
@@ -22,4 +36,12 @@ function readInput() {
   });
 }
 
+function changeClass() {
+  finalLetter.addEventListener('click', (event) => {
+    const evt = event;
+    evt.target.className = randomClassGenerator();
+  });
+}
+
 readInput();
+changeClass();
