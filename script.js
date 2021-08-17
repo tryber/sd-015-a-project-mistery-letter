@@ -5,6 +5,7 @@ const style = ['newspaper', 'magazine1', 'magazine2'];
 const size = ['medium', 'big', 'reallybig'];
 const rotate = ['rotateleft', 'rotateright'];
 const skew = ['skewleft', 'skewright'];
+const wordCount = document.getElementById('carta-contador');
 
 function randomClassGenerator() {
   const styleIndex = Math.floor(Math.random() * 3);
@@ -17,8 +18,7 @@ function randomClassGenerator() {
 
 function readInput() {
   createBttn.addEventListener('click', () => {
-    const text = inputText.value;
-    const words = text.split(' ');
+    const words = inputText.value.split(' ');
     finalLetter.innerHTML = '';
     let emptyCount = 0;
     for (let index = 0; index < words.length; index += 1) {
@@ -33,6 +33,7 @@ function readInput() {
     if (emptyCount === words.length) {
       finalLetter.innerHTML = 'Por favor, digite o conteúdo da carta.';
     }
+    wordCount.innerHTML = words.length;
   });
 }
 
