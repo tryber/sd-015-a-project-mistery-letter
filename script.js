@@ -43,4 +43,17 @@ function createLetter() {
   });
 }
 
+function changeStyle() {
+  const letter = document.getElementById('carta-gerada');
+
+  letter.addEventListener('click', (element) => {
+    const wordClass = element.target;
+    wordClass.className = '';
+    console.log(`before: ${wordClass.className}`);
+    stylization(wordClass);
+    console.log(`after: ${wordClass.className}`);
+  });
+}
+
 createLetter();
+changeStyle();
