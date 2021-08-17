@@ -12,7 +12,6 @@ function stylization(newSpan) {
   newSpan.classList.add(size[randomNumber(size.length - 1)]);
   newSpan.classList.add(rotate[randomNumber(rotate.length - 1)]);
   newSpan.classList.add(incl[randomNumber(incl.length - 1)]);
-  console.log(newSpan.classList);
 }
 
 function createLetterHelper(textArray, letter) {
@@ -23,6 +22,11 @@ function createLetterHelper(textArray, letter) {
     stylization(newSpan);
     letter.appendChild(newSpan);
   }
+}
+
+function countWords() {
+  const countParagraph = document.getElementById('carta-contador');
+  countParagraph.innerHTML = `${document.querySelectorAll('span').length}`;
 }
 
 function createLetter() {
@@ -40,6 +44,7 @@ function createLetter() {
       letter.appendChild(errorSpan);
     }
     createLetterHelper(textArray, letter);
+    countWords();
   });
 }
 
