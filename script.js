@@ -1,6 +1,7 @@
 const createButton = document.getElementById('criar-carta');
 const letterParagraph = document.getElementById('carta-gerada');
 const letterInput = document.getElementById('carta-texto');
+const wordCounter = document.getElementById('carta-contador');
 
 const styleClasses = {
   style: ['newspaper', 'magazine1', 'magazine2'],
@@ -28,14 +29,18 @@ function randomClasses(word) {
 
   selectClass(word, styleClasses.style);
 
-  console.log(numberOfClasses);
   for (let index = 0; index < numberOfClasses; index += 1) {
     const keyPosition = randomInteger(classes.length, 0);
     const className = classes[keyPosition];
     selectClass(word, styleClasses[className]);
     classes.splice(keyPosition, 1);
   }
-  console.log(word);
+}
+
+function changeStyle(event) {
+  const word = event.target;
+  word.className = '';
+  randomClasses(word);
 }
 
 function createLetterParagraph(word, isLetter) {
@@ -43,6 +48,7 @@ function createLetterParagraph(word, isLetter) {
   span.innerHTML = word;
   if (isLetter) {
     randomClasses(span);
+    span.addEventListener('click', changeStyle);
   }
   letterParagraph.appendChild(span);
 }
@@ -54,13 +60,15 @@ function createLetter() {
     }
 
     const text = letterInput.value;
+    const words = text.split(' ');
 
     if (text.trim() === '') {
       createLetterParagraph('Por favor, digite o conteúdo da carta.', false);
     } else {
-      text.split(' ').forEach((word) => {
+      words.forEach((word) => {
         createLetterParagraph(word, true);
       });
+      wordCounter.innerHTML = words.length;
     }
   });
 }

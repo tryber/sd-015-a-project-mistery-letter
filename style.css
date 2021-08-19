@@ -24,10 +24,6 @@ main {
   text-align: center;
 }
 
-.word {
-  margin: 10px;
-}
-
 .newspaper {
   background-color: antiquewhite;
   font-family: Times New Roman, Times, serif;
@@ -80,3 +76,6 @@ main {
   transform: skewX(-10deg);
 }
 
+#carta-contador {
+  margin: 20px;
+}
