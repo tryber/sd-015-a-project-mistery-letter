@@ -11,9 +11,18 @@ header {
   text-align: center;
   padding: 20px;
   background-color: gray;
+  width: 100%;
 }
 
 main {
-  width: 940px;
   margin: 20px auto;
+  text-align: center;
+}
+
+.carta {
+  text-align: center;
+}
+
+.word {
+  margin: 10px;
 }
