@@ -10,20 +10,25 @@ body {
   color: white;
 }
 
-body , h1 , h2 , p , ul , li {
-  margin: 0;
-  padding: 0;
-}
-
 #main-container {
   width: 100vw;
-  height: 100vh;
+  height: 50%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #carta-texto {
   width: 500px;
   height: 30px;
-  margin-top: 80px;
+  margin: 80px 0 40px;
+}
+
+/* #carta-gerada {
+
+} */
+
+p {
+  font-size: 1.25em;
 }
