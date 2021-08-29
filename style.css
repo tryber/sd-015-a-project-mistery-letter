@@ -89,7 +89,7 @@ p {
 }
 
 .skewleft {
-  transform: skewX(5deg);
+  transform: skewX(10deg);
 }
 
 .skewright {
