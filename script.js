@@ -1,6 +1,7 @@
 const letter = document.getElementById('carta-gerada');
 const btn = document.getElementById('criar-carta');
 const input = document.getElementById('carta-texto');
+const counter = document.getElementById('carta-contador');
 
 const style = ['newspaper', 'magazine1', 'magazine2'];
 const size = ['medium', 'big', 'reallybig'];
@@ -9,6 +10,10 @@ const inclination = ['skewleft', 'skewright'];
 
 const randomIndex3 = () => Math.floor(Math.random() * 3);
 const randomIndex2 = () => Math.floor(Math.random() * 2);
+
+const wordCounter = () => {
+  counter.innerText = letter.childElementCount;
+};
 
 const createSpan = () => {
   const words = input.value.split(' ');
@@ -20,6 +25,7 @@ const createSpan = () => {
      ${rotate[randomIndex2()]} ${inclination[randomIndex2()]}`;
     letter.appendChild(span);
   }
+  wordCounter();
 };
 
 btn.addEventListener('click', () => {
