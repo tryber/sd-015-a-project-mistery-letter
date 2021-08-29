@@ -3,6 +3,7 @@ const btn = document.getElementById('criar-carta');
 const input = document.getElementById('carta-texto');
 
 btn.addEventListener('click', () => {
+  letter.innerText = '';
   if (!input.value.trim()) {
     letter.innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
