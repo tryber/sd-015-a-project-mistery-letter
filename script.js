@@ -13,4 +13,4 @@ function createLetter() {
 
 window.onload = () => {
   document.getElementById('criar-carta').addEventListener('click', createLetter);
-}
+};
