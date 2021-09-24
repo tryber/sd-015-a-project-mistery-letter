@@ -49,3 +49,12 @@
 .skewright {
   transform: skewX(-10deg);
 }
+
+p {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+span {
+  margin-right: 20px;
+}
