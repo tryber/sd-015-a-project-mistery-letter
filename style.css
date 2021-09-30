@@ -24,6 +24,9 @@
   font-family: Verdana;
   font-weight: 900;
 }
+#carta-gerada span {
+  display: inline-block;
+}
 
 .medium {
   font-size: 20px;

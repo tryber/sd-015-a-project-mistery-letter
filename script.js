@@ -1,6 +1,7 @@
 const getGenerateLetterButton = document.getElementById('criar-carta');
 const getGeneratedLetter = document.getElementById('carta-gerada');
 const getInput = document.getElementById('carta-texto');
+const getCounter = document.getElementById('carta-contador');
 
 getGenerateLetterButton.addEventListener('click', generateLetter)
 
@@ -26,6 +27,7 @@ function generateLetter() {
   if (input.length === 0) return getGeneratedLetter.innerHTML = "Por favor, digite o conteúdo da carta.";
 
   const letterWords = input.split(' ');
+  const letterSize = letterWords.length;
 
   letterWords.forEach(word => {
     const span = document.createElement('span');
@@ -33,5 +35,8 @@ function generateLetter() {
     span.className = `${estilo[randomNumber(3)]} ${tamanho[randomNumber(3)]} ${rotacao[randomNumber(2)]} ${inclinacao[randomNumber(2)]}`;
     getGeneratedLetter.appendChild(span);
   })
+  getCounter.innerHTML = letterSize;
 }
+
+
 
