@@ -39,3 +39,19 @@
   font-size: 40px;
   padding: 15px;
 }
+
+.rotate-left {
+  transform: rotate(-5deg);
+}
+
+.rotate-right {
+  transform: rotate(5deg);
+}
+
+.skewleft {
+  transform: skewX(10deg);
+}
+
+.skewright {
+  transform: skewX(-10deg);
+}
